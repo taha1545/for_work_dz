@@ -1,4 +1,5 @@
 <?php
+// for connect data base
 try {
     $db_server = "localhost";
     $db_user = "root";
