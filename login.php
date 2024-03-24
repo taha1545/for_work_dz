@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For_Work_dz</title>
-    <link rel="icon" href="dz.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="photos/dz.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
     <section>
         <div class="imgBx">
-            <img src="brandi-redd-aJTiW00qqtI-unsplash.jpg" alt="Background Image" >
-            <img src="dz.png" alt="Logo" class="Logo">
+            <img src="photos/brandi-redd-aJTiW00qqtI-unsplash.jpg" alt="Background Image" >
+            <img src="photos/dz.png" alt="Logo" class="Logo">
             <h1>FOR WORK</h1>
         </div>
         <div class="contentBx">
@@ -47,8 +47,8 @@
                 </form>
                 <h3 class="words">Or login with</h3>
                 <ul class="sci">     
-                    <li><img src="social1.png" style="width: 40px;"></li>
-                    <li><img src="facebook-64x64.png" style="width: 50px;"></li>
+                    <li><img src="photos/social1.png" style="width: 40px;"></li>
+                    <li><img src="photos/facebook-64x64.png" style="width: 50px;"></li>
                 </ul>
             </div>
         </div>
