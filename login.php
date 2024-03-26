@@ -43,7 +43,7 @@
                         <input type="submit" value="Log in" name="login" >
                     </div>
                     
-                        <a href="#">Forgot Username Password ?</a>
+                        <a href="forgotpassword.php">Forgot Username Password ?</a>
                 </form>
                 <h3 class="words">Or login with</h3>
                 <ul class="sci">     
@@ -56,13 +56,15 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 <?php
  include("database.php");
   session_start(); 
+
   if( isset($_POST["login"]) && isset($_POST["email"]) && isset($_POST["password"]) ){
       $email=$_POST["email"];
       $password=$_POST["password"];
-      
+
 
      //
        $valid=false;

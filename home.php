@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="icon" href="photos/dz.png" type="image/x-icon">
     <title>Home Page</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="styles/home.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+
 <body>
     <section>
         <div class="img">
@@ -22,7 +24,7 @@
              <i class='bx bx-menu siderbarOpen' style='color:#ffffff'  ></i>
              
 
-             <img src="dz.png" class="logo">
+             <img src="photos/dz.png" class="logo">
 
              
               <div class="nav_menu" >
@@ -37,7 +39,6 @@
                  </div>
                  <hr>
                 <ul class="nav_lists">
-                       <li> <a href="#">Home</a></li>
                        <li> <a href="#">Catégories</a></li>
                        <li> <a href="#">About Us</a></li>
                        <li> <a href="#">FAQs</a></li>
@@ -67,35 +68,35 @@
                  </div>
 
                  <!--/////////////profile//////////////////-->
-                 <img src="user.png" class="img-prof" onclick="toggleMenu()">
+                 <img src="photos/user.png" class="img-prof" onclick="toggleMenu()">
              <div class="sub-menu-wrap" id="subMenu">
                  <div class="sub-menu">
                      <div class="user-info">
-                       <img src="user.png" >
+                       <img src="photos/user.png" >
                        <h3>User Name</h3>
                      </div>
                      <hr>
 
                      <a href="#" class="sub-menu-link">
-                        <img src="profile.png">
+                        <img src="photos/profile.png">
                         <p>Edit Profile</p>
                         <span>></span>
                      </a>
 
                      <a href="#" class="sub-menu-link">
-                        <img src="setting.png">
+                        <img src="photos/setting.png">
                         <p>Setting</p>
                         <span>></span>
                      </a>
 
                      <a href="#" class="sub-menu-link">
-                        <img src="help.png">
+                        <img src="photos/help.png">
                         <p>Help & Support</p>
                         <span>></span>
                      </a>
 
                      <a href="#" class="sub-menu-link">
-                        <img src="logout.png">
+                        <img src="photos/logout.png">
                         <p>Logout</p>
                         <span>></span>
                      </a>
