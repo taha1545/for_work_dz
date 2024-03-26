@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+</head>
+<body>
+    <section>
+        <div class="img">
+        </div>
+    </section>
+    <!--/////////nav/////////-->
+    
+        <nav>
+            <div class="nav-bar">
+             <!-- Toggle button--> 
+             <i class='bx bx-menu siderbarOpen' style='color:#ffffff'  ></i>
+             
+
+             <img src="dz.png" class="logo">
+
+             
+              <div class="nav_menu" >
+                <div class="logo-toggle"> 
+                    <!--<a href="#">For Work</a>
+                    <div class="logo-sider">
+                     <img src="dz.png" >
+                     <h2>For Work</h2>
+                   </div>
+                   -->
+                    <i class='bx bx-x cancel siderbarClose'></i>
+                 </div>
+                 <hr>
+                <ul class="nav_lists">
+                       <li> <a href="#">Home</a></li>
+                       <li> <a href="#">Catégories</a></li>
+                       <li> <a href="#">About Us</a></li>
+                       <li> <a href="#">FAQs</a></li>
+                       <li> <a href="#">Contact Us</a></li>
+                    
+                </ul>
+              </div>
+
+              <div class="nav_action">
+                 <div class="searchBox">
+                    <div class="searchToggle">
+                       <i class='bx bx-x cancel'></i>
+                       <i class='bx bx-search search'></i>
+                       
+                    </div>
+                       <div class="search-field">
+                            <input type="text" placeholder="Search...">
+                            <i class='bx bx-search '></i>
+                       </div>
+                    
+                 </div>
+                 <div class="email">
+                    <i class='bx bx-envelope'></i> 
+                 </div>
+                 <div class="notification">
+                    <i class='bx bxs-bell'></i>
+                 </div>
+
+                 <!--/////////////profile//////////////////-->
+                 <img src="user.png" class="img-prof" onclick="toggleMenu()">
+             <div class="sub-menu-wrap" id="subMenu">
+                 <div class="sub-menu">
+                     <div class="user-info">
+                       <img src="user.png" >
+                       <h3>User Name</h3>
+                     </div>
+                     <hr>
+
+                     <a href="#" class="sub-menu-link">
+                        <img src="profile.png">
+                        <p>Edit Profile</p>
+                        <span>></span>
+                     </a>
+
+                     <a href="#" class="sub-menu-link">
+                        <img src="setting.png">
+                        <p>Setting</p>
+                        <span>></span>
+                     </a>
+
+                     <a href="#" class="sub-menu-link">
+                        <img src="help.png">
+                        <p>Help & Support</p>
+                        <span>></span>
+                     </a>
+
+                     <a href="#" class="sub-menu-link">
+                        <img src="logout.png">
+                        <p>Logout</p>
+                        <span>></span>
+                     </a>
+
+                     
+                  </div>
+            </div>
+              </div>
+            </div>
+            
+        </nav>
+    
+    
+   <script src="navbar.js"></script>
+</body>
+</html>
