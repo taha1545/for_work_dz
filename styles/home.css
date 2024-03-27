@@ -14,7 +14,7 @@
 section .img{
     
     height: 100vh;
-    background-image: url(istockphoto-1307598870-1024x1024.jpg);
+    background-image: url(photos/istockphoto-1307598870-1024x1024.jpg);
     
     background-size: cover;
     background-position: center;
