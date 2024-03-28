@@ -16,7 +16,7 @@
         <div class="img">
         </div>
     </section>
-    <!--/////////nav/////////-->
+    
     
         <nav>
             <div class="nav-bar">
