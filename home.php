@@ -16,7 +16,7 @@
         <div class="img">
         </div>
     </section>
-    
+    <!--/////////nav/////////-->
     
         <nav>
             <div class="nav-bar">
@@ -77,7 +77,7 @@
                      </div>
                      <hr>
 
-                     <a href="#" class="sub-menu-link">
+                     <a href="editprofile.php" class="sub-menu-link">
                         <img src="photos/profile.png">
                         <p>Edit Profile</p>
                         <span>></span>
@@ -95,7 +95,7 @@
                         <span>></span>
                      </a>
 
-                     <a href="#" class="sub-menu-link">
+                     <a href="index.php?destroy='true'" class="sub-menu-link">
                         <img src="photos/logout.png">
                         <p>Logout</p>
                         <span>></span>
@@ -113,3 +113,7 @@
    <script src="navbar.js"></script>
 </body>
 </html>
+<?php 
+
+
+?>

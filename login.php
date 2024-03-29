@@ -43,14 +43,14 @@
                     </div>
 
                     <div class="remember">
-                        <label><input type="checkbox" name="remembre_password">Remember password</label>
+                        <label><input type="checkbox" name="check">Remember my account</label>
                     </div>
 
                     <div class="inputBx">
                         <input type="submit" value="Log in" name="login" >
                     </div>
                     
-                        <a href="#">Forgot Username Password ?</a>
+                        <a href="#">Forgot  Password ?</a>
                 </form>
 
                 <h3 class="words">Or login with</h3>
@@ -68,12 +68,20 @@
 
 <?php
  include("database.php");
-  session_start(); 
+  session_start();
 
-  if( isset($_POST["login"]) && isset($_POST["email"]) && isset($_POST["password"]) ){
+  if(isset($_COOKIE['email']) && isset( $_COOKIE['password'])  && !$_GET["destroy"]){
+    $_SESSION["email"]= $_COOKIE['email'];
+    header("location:home.php");
 
-      $email=$_POST["email"];
-      $password=$_POST["password"];
+ }else{
+  
+  if( isset($_POST["login"]) && isset($_POST["email"]) && isset($_POST["password"]) ){ 
+    
+     $email=$_POST["email"];
+     $password=$_POST["password"]; 
+ 
+     
 
 
      //
@@ -103,23 +111,38 @@
     //
     if( $valid && !$mistak ){
         $_SESSION["email"]= $email;
+
+        if (isset($_POST["check"])) {
+            setcookie('email', $email, time() + 60 * 60 * 24 * 30, '/');
+            setcookie('password', $password, time() + 60 * 60 * 24 * 30, '/');
+        }
+
         header("location:home.php");
     }else if( $mistak ){
        echo" <script> document.querySelector('#mistake').style.display = 'block'; </script>";
     }else{
           $_SESSION["email"]= $email;
          
+          if (isset($_POST["check"])) {
+            setcookie('email', $email, time() + 60 * 60 * 24 * 30, '/');
+            setcookie('password', $password, time() + 60 * 60 * 24 * 30, '/');
+        }
+
           try{
             $sql = "INSERT INTO users (email,password) VALUES ('$email','$password')";
              mysqli_query($conn,$sql);
             }catch(mysqli_sql_exception){
             echo"there is problem";
             }
+           
          header("location:home.php");
     }
 
-    }
+    }}
   
 
  mysqli_close($conn);
+
+
+
 ?>
