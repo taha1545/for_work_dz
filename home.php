@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link rel="icon" href="photos/dz.png" type="image/x-icon">
     <title>Home Page</title>
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles\home.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>

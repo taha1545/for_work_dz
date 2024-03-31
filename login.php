@@ -75,9 +75,9 @@
     header("location:home.php");
 
  }else{
-    setcookie('email', $email, time() -3600, '/');
-    setcookie('password', $password, time() -3600, '/');
-  
+    setcookie('email', "jhsdjkas", time() -3600, '/');
+    setcookie('password', "iahcaidj", time() -3600, '/');
+
   if( isset($_POST["login"]) && isset($_POST["email"]) && isset($_POST["password"]) ){ 
     
      $email=$_POST["email"];
