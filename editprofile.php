@@ -1,6 +1,46 @@
 <?php
+
+  include("database.php");
  session_start();
+////////////////////////////////////////
+ $email=$_SESSION["email"];
+ try{
+  $sql = " SELECT id_profil FROM `users` WHERE email='$email' ";
+  $res=mysqli_query($conn,$sql);
+  if(mysqli_num_rows($res)>0){
+   $row = mysqli_fetch_assoc($res);
+  }  
+}catch(mysqli_sql_exception $e){
+  echo "There is a problem22: " . $e->getMessage();
+}
+
+///////////////////////////////////////////////
+if(isset($row["id_profil"] )){
+  $idprofile= $row["id_profil"];
+  try{
+    $sql = " SELECT * FROM `profile` WHERE id='$idprofile' ";
+    $res=mysqli_query($conn,$sql);
+    if(mysqli_num_rows($res)>0){
+     $row = mysqli_fetch_assoc($res);
+      $name=$row["name"];
+      $familyname= $row["familyname"];
+      $phone= $row["phone"];
+      $domaine=$row["domain"];
+      $skills=$row["skills"];
+      $Experience=$row["experience"];
+    }  
+}catch(mysqli_sql_exception $e){
+    echo "There is a problem22: " . $e->getMessage();
+}
+}
+//////////////////////////////////////////////
+
+
+
+ mysqli_close($conn);
 ?>
+
+
 <!DOCTYPE html>
   <html>
   <head>
@@ -34,28 +74,52 @@
             <input type="text"
                     id="Nom"
                     name="name"
-                    placeholder="Entrez Nom"/>
+                    placeholder="<?php
+                      if(isset($name)){
+                         echo "".$name."";
+                      } else{
+                        echo "user123";
+                      }
+                    ?>"/>
           </div>
           <div class="user-input-box">
             <label for="Prenom">Family name</label>
             <input type="text"
                     id="username"
                     name="familyname"
-                    placeholder="Entrez Prenom"/>
+                    placeholder="<?php
+                      if(isset($familyname)){
+                         echo "".$familyname."";
+                      } else{
+                        echo "family name";
+                      }
+                    ?>"/>
           </div>
           <div class="user-input-box">
             <label for="Domaine">Domaine</label>
             <input type="Domaine"
                     id="Domaine"
                     name="Domaine"
-                    placeholder="informatique"/>
+                    placeholder="<?php
+                      if(isset($domaine)){
+                         echo "".$domaine."";
+                      } else{
+                        echo "worker ";
+                      }
+                    ?>"/>
           </div>
           <div class="user-input-box">
             <label for="Téléphone">phone</label>
             <input type="text"
                     id="Téléphone"
                     name="phone"
-                    placeholder="+213567-567-567"/>
+                    placeholder="<?php
+                      if(isset($phone)){
+                         echo "".$phone."";
+                      } else{
+                        echo "067233729";
+                      }
+                    ?>"/>
           </div>
           <div class="user-input-box">
             <label for="Date de naissance">date de naissance</label>
@@ -121,7 +185,13 @@
             <input type="text"
                     id="compétences"
                     name="skills"
-                    placeholder="compétences"/>
+                    placeholder="<?php
+                      if(isset($skills)){
+                         echo "".$skills."";
+                      } else{
+                        echo "Nothing";
+                      }
+                    ?>"/>
           </div>
           
           <div class="user-input-box">
@@ -129,7 +199,13 @@
             <input type="text"
                     id="Experience"
                     name="Experience"
-                    placeholder="Experience"/>
+                    placeholder="<?php
+                      if(isset($Experience)){
+                         echo "".$Experience."";
+                      } else{
+                        echo "no experince";
+                      }
+                    ?>"/>
           </div>
           <div class="scanneDiplome ">
             <button type = "button" class = "btn-warning">
@@ -146,9 +222,12 @@
             <label for="Homme">male</label>
             <input type="radio" name="female" id="female">
             <label for="Femme">female</label>
+            
           </div>
         </div>
+        
         <div class="form-submit-btn">
+         <p style="display:none" id="mistake" >................................................ please fill all information !!</p>
           <input type="submit" value="Register" name="login">
         </div>
       </form>
@@ -286,9 +365,11 @@
         $sql = "INSERT INTO profile (name,familyname,domain,phone,date,wilaya,skills,experience,image_name,diplome_name,gender,session) 
         VALUES('$name','$familyname','$domaine','$phone',' $date',' $wilaya',' $skills','$Experience','$newImageName','$newImageName2','$gender','$session')";
          mysqli_query($conn,$sql);
+        
         }catch(mysqli_sql_exception){
         echo"there is problem";
         }
+       
       }
 
        $id=0;
@@ -326,17 +407,23 @@
               session = '$session'
           WHERE id = $idprofil";
            mysqli_query($conn,$sql);
+          
           }catch(mysqli_sql_exception){
           echo"there is problem";
           }
         }
     }
+   echo"
+     <script>
+     window.location.href = 'home.php';
+       </script>";
 
-
-
-
+    
+   
+    }else if(isset($_POST["login"]) && (isset($_POST["name"]) || isset($_POST["familyname"])|| isset($_POST["Domaine"]) || isset($_POST["phone"]) || isset($_POST["date"])  || isset($_POST["skills"]) || isset($_POST["Experience"]) || ( isset($_POST["male"]) || isset($_POST["female"])) && isset($_FILES["image"]) )){
+      echo" <script> document.querySelector('#mistake').style.display = 'block'; </script>";
     }
+ 
   
  mysqli_close($conn);
 
-?>
