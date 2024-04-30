@@ -61,11 +61,19 @@ if(isset($row["id_profil"] )){
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  enctype="multipart/form-data">
 
       <div class="upload">
-        <img src="photos\editeprofile.jpg" width = 100 >
+        <img src="photos\editeprofile.jpg" id="profile-pic">
         <div class="round">
-          <input type="file" name="image">
+            <!--//////////////////-->
+          <input type="file" accept="image/jpeg , image/jpg , image/png" id="input-file" name="image">
           <i class = "fa fa-camera"></i>
         </div>
+        <script>
+            let profilePic = document.getElementById("profile-pic");
+            let inputFile = document.getElementById("input-file");
+            inputFile.onchange = function(){
+                profilePic.src = URL.createObjectURL(inputFile.files[0]);
+            }
+        </script>
 
       </div>
         <div class="main-user-info">  

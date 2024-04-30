@@ -50,24 +50,47 @@ mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <link rel="icon" href="photos/dz.png" type="image/x-icon">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="styles\home.css">
+    <title>For work Dz</title>
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/96dcb489df.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
 </head>
-
 <body>
+    <!-- section acceuil -->
+    <div class="single-box" >
+    </div>
+
+     <section id="home-page">
+        
+        <div class="banner">
+         <h2>For Work</h2>
+         <p>une plateforme de gestion des CVs des demandeurs d'emplois</p>
+         <a href="#">Learn More</a>
+         
+
+
+        </div>
+
+        
+    
     <!--/////////nav/////////-->
+    
         <nav>
             <div class="nav-bar">
-             <i class='bx bx-menu siderbarOpen' style='color:#ffffff'  ></i>
+             <!-- Toggle button--> 
+             <i class='bx bx-menu siderbarOpen' style='color:#1877F2'></i>
              
-             
+
              <img src="photos/dz.png" class="logo">
 
              
@@ -79,15 +102,16 @@ mysqli_close($conn);
                      <h2>For Work</h2>
                    </div>
                    -->
-                    <i class='bx bx-x cancel siderbarClose'></i>
+                    <i class='bx bx-x cancel siderbarClose' style='color:#1877F2'></i>
                  </div>
                  <hr>
-                 <ul class="nav_lists">
-                    <li> <a href="categories.php">Catégories</a></li>
-                    <li> <a href="profile.php">profile </a></li>
-                    <li> <a href="#">FAQs</a></li>
-                    <li> <a href="#">Contact Us</a></li>
-                    </ul>
+                <ul class="nav_lists">
+                       <li> <a href="#home-page">Home</a></li>
+                       <li> <a href="#profilesilder">Profiles</a></li>
+                       <li> <a href="">About Us</a></li>
+                       <li> <a href="FAQs.html">FAQs</a></li>
+                       <li> <a href="contactus.html">Contact Us</a></li>
+                </ul>
               </div>
 
               <div class="nav_action">
@@ -110,10 +134,11 @@ mysqli_close($conn);
                     <i class='bx bxs-bell'></i>
                  </div>
 
-                 <!--/////////////profile//////////////////-->
+                 
+                  <!--/////////////profile//////////////////-->
 
                  
-                 <img  src="<?php 
+                  <img  src="<?php 
                     
                     if(isset($image_name_self)){
                       echo "photos/".$image_name_self;
@@ -151,26 +176,26 @@ mysqli_close($conn);
                      </div>
                      <hr>
 
-                     <a href="editprofile.php" class="sub-menu-link">
-                        <img src="photos/profile.png">
+                     <a href="#" class="sub-menu-link">
+                        <img src="profile.png">
                         <p>Edit Profile</p>
                         <span>></span>
                      </a>
 
                      <a href="#" class="sub-menu-link">
-                        <img src="photos/setting.png">
+                        <img src="setting.png">
                         <p>Setting</p>
                         <span>></span>
                      </a>
 
                      <a href="#" class="sub-menu-link">
-                        <img src="photos/help.png">
+                        <img src="help.png">
                         <p>Help & Support</p>
                         <span>></span>
                      </a>
 
-                     <a href="index.php?destroy='true'" class="sub-menu-link">
-                        <img src="photos/logout.png">
+                     <a href="#" class="sub-menu-link">
+                        <img src="logout.png">
                         <p>Logout</p>
                         <span>></span>
                      </a>
@@ -182,9 +207,142 @@ mysqli_close($conn);
             </div>
             
         </nav>
+        <script src="navbar.js"></script>
+
+    </section> 
+
+    <!--profilesilder-->
+    <h2>Profiles</h2>
+    <section id="profilesilder">
+        
+        <div class="swiper mySwiper container">
+            <div class="swiper-wrapper content">
+                <div class="swiper-slide card">
+                    <div class="box1"></div>
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                        </div>
+                        <div class="media-icons">
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="name-profession">
+                            <span class="name">User Name</span>
+                            <span class="profession">Graphic Designer</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        
+                        <div class="button b1">
+                            <button class="aboutMe">See Profile</button>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="box1"></div>
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                        </div>
+                        <div class="media-icons">
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="name-profession">
+                            <span class="name">User Name</span>
+                            <span class="profession">Graphic Designer</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        
+                        <div class="button b1">
+                            <button class="aboutMe">See Profile</button>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="box1"></div>
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg?size=626&ext=jpg&uid=R70460828&ga=GA1.2.1826433234.1647754373" alt="">
+                        </div>
+                        <div class="media-icons">
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="name-profession">
+                            <span class="name">User Name</span>
+                            <span class="profession">Graphic Designer</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        
+                        <div class="button b1">
+                            <button class="aboutMe">See Profile </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+
     
-    
-   <script src="navbar.js"></script>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- initializing swiper slider -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          grabCursor: true,
+          autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            },
+          slidesPerGroup: 1,
+          loop: true,
+          loopFillGroupWithBlank: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+        </script>
+ 
+
 </body>
 </html>
 <?php 
