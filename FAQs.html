@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive FAQ Accordion | CodingLab </title>
+    <link rel="stylesheet" href="styles/FAQs.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="accordion">
+    <div class="image-box">
+      <img src="photos/mainImg.png" alt="Accordion Image">
+    </div>
+    <div class="accordion-text">
+      <div class="title">FAQs</div>
+    <ul class="faq-text">
+      <li>
+        <div class="question-arrow">
+          <span class="question">Comment  puis -je postuler à une offre d’emploi ?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Pour postuler , il vous suffit de créer un compte et de soumettre votre CV .</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Combien de temps faut-il pour obtenir une réponse à ma
+            candidature ?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Nous nous efforçons de répondre dans les 5 jours ouvrables.</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Puis-je modifier mon CV après l’avoir soumis ?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Oui, vous pouvez modifier votre CV à tout moment dans votre profil .</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Quels type d’emplois sont disponibles sur la plateforme ?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Nous avons des emplois pour tous les niveaux de compétence et d'intérêt, de la menuiserie à la programmation.</p>
+        <span class="line"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Y a-t-il des frais pour postuler à un emploi
+            sur la plateforme?</span>
+          <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <p>Non, postuler à un emploi est entièerement gratuit.</p>
+        <span class="line"></span>
+      </li>
+    </ul>
+    </div>
+  </div>
+
+
+  <script>
+    let li = document.querySelectorAll(".faq-text li");
+    for (var i = 0; i < li.length; i++) {
+      li[i].addEventListener("click", (e)=>{
+        let clickedLi;
+        if(e.target.classList.contains("question-arrow")){
+          clickedLi = e.target.parentElement;
+        }else{
+          clickedLi = e.target.parentElement.parentElement;
+        }
+       clickedLi.classList.toggle("showAnswer");
+      });
+    }
+  </script>
+
+</body>
+</html>
