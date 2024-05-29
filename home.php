@@ -91,7 +91,12 @@ mysqli_close($conn);
              <i class='bx bx-menu siderbarOpen' style='color:#1877F2'></i>
              
 
-             <img src="photos/dz.png" class="logo">
+             <img src="photos/dz.png" class="logo" onclick="goToPage4()">
+             <script>
+                function goToPage4() {
+                    window.location.href = "index.html";
+                }
+            </script>
 
              
               <div class="nav_menu" >
@@ -105,12 +110,27 @@ mysqli_close($conn);
                     <i class='bx bx-x cancel siderbarClose' style='color:#1877F2'></i>
                  </div>
                  <hr>
-                <ul class="nav_lists">
-                       <li> <a href="#home-page">Home</a></li>
-                       <li> <a href="#profilesilder">Profiles</a></li>
-                       <li> <a href="">About Us</a></li>
-                       <li> <a href="FAQs.html">FAQs</a></li>
-                       <li> <a href="contactus.html">Contact Us</a></li>
+                 <ul class="nav_lists">
+                       <li><a href="#home-page">Home</a></li>
+                       <li><a href="#profilesilder">Profiles</a></li>
+                       <li><a onclick="goToPage1()">About Us</a></li>
+                       <script>
+                        function goToPage1() {
+                            window.location.href = "aboutus.html";
+                        }
+                    </script>
+                       <li><a onclick="goToPage2()" >FAQs</a></li>
+                       <script>
+                        function goToPage2() {
+                            window.location.href = "FAQs.html";
+                        }
+                    </script>
+                       <li><a onclick="goToPage3()">Contact Us</a></li>
+                       <script>
+                        function goToPage3() {
+                            window.location.href = "contactus.html";
+                        }
+                    </script>
                 </ul>
               </div>
 
@@ -147,7 +167,12 @@ mysqli_close($conn);
                     }
                   ?>
                  " class="img-prof" onclick="toggleMenu()">
-           
+                 <a onclick="goToPage7()"><h3>User Name</h3></a>
+                       <script>
+                        function goToPage7() {
+                            window.location.href = "profile.html";
+                        }
+                        </script>
            
                  <div class="sub-menu-wrap" id="subMenu">
                  <div class="sub-menu">
@@ -178,8 +203,13 @@ mysqli_close($conn);
 
                      <a href="#" class="sub-menu-link">
                         <img src="profile.png">
-                        <p>Edit Profile</p>
+                        <p onclick="goToPage8()">Edit Profile</p>
                         <span>></span>
+                        <script>
+                            function goToPage8() {
+                                window.location.href = "editprofile.html";
+                            }
+                        </script>
                      </a>
 
                      <a href="#" class="sub-menu-link">
@@ -341,6 +371,27 @@ mysqli_close($conn);
           },
         });
         </script>
+
+
+<!--entreprise-->
+<div class="contact-form">
+    <h1>Annonces d'Entreprise</h1>
+    <div class="info-box">
+    <p>Spécialité: <span id="specialite"></span></p>
+    <p>Annonce: <span id="annonce"></span></p>
+    <p>Email: <span id="email"></span></p>
+    <p>Téléphone: <span id="telephone"></span></p>
+</div>
+</div>
+</div>
+
+<script>
+document.getElementById('specialite').innerText = localStorage.getItem('specialite');
+document.getElementById('annonce').innerText = localStorage.getItem('annonce');
+document.getElementById('email').innerText = localStorage.getItem('email');
+document.getElementById('telephone').innerText = localStorage.getItem('telephone');
+</script>
+
  
 
 </body>

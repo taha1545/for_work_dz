@@ -5,12 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <link rel="stylesheet" href="styles/contactus.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
+
+  <!--/////////nav/////////-->
+    
+  <nav>
+      <div class="nav-bar">
+       <!-- Toggle button--> 
+       <i class='bx bx-menu siderbarOpen' style='color:#1877F2'></i>
+       
+
+       <img src="dz.png" class="logo" onclick="goToPage4()">
+       <script>
+          function goToPage4() {
+              window.location.href = "index.html";
+          }
+      </script>
+       
+        <div class="nav_menu" >
+          <div class="logo-toggle"> 
+              <!--<a href="#">For Work</a>
+              <div class="logo-sider">
+               <img src="dz.png" >
+               <h2>For Work</h2>
+             </div>
+             -->
+              <i class='bx bx-x cancel siderbarClose' style='color:#1877F2'></i>
+           </div>
+           <hr>
+          <ul class="nav_lists">
+                 <li><a onclick="goToPage5()">Home</a></li>
+                 <script>
+                  function goToPage5() {
+                      window.location.href = "index.html";
+                  }
+              </script>
+                 <li><a onclick="goToPage6()">Profiles</a></li>
+                 <script>
+                  function goToPage6() {
+                      window.location.href = "index.html";
+                  }
+              </script>
+                 <li><a onclick="goToPage1()">About Us</a></li>
+                 <script>
+                  function goToPage1() {
+                      window.location.href = "aboutus.html";
+                  }
+              </script>
+                 <li><a onclick="goToPage2()" >FAQs</a></li>
+                 <script>
+                  function goToPage2() {
+                      window.location.href = "FAQs.html";
+                  }
+              </script>
+                 <li><a onclick="goToPage3()">Contact Us</a></li>
+                 <script>
+                  function goToPage3() {
+                      window.location.href = "contactus.html";
+                  }
+              </script>
+          </ul>
+        </div>
+
+        <div class="nav_action">
+           <div class="searchBox">
+              <div class="searchToggle">
+                 <i class='bx bx-x cancel'></i>
+                 <i class='bx bx-search search'></i>
+                 
+              </div>
+                 <div class="search-field">
+                      <input type="text" placeholder="Search...">
+                      <i class='bx bx-search '></i>
+                 </div>
+              
+           </div>
+           <div class="email">
+              <i class='bx bx-envelope'></i> 
+           </div>
+           <div class="notification">
+              <i class='bx bxs-bell'></i>
+           </div>
+           <!--/////////////profile//////////////////-->
+           <img src="user.png" class="img-prof" onclick="toggleMenu()">
+           <div class="sub-menu-wrap" id="subMenu">
+               <div class="sub-menu">
+                   <div class="user-info">
+                     <img src="user.png" >
+                     <a href="profile.html"><h3>User Name</h3></a>
+                   </div>
+                   <hr>
+
+                   <a href="#" class="sub-menu-link">
+                      <img src="profile.png">
+                      <p>Edit Profile</p>
+                      <span>></span>
+                   </a>
+                    
+                   <a href="#" class="sub-menu-link">
+                      <img src="setting.png">
+                      <p>Setting</p>
+                      <span>></span>
+                   </a>
+
+                   <a href="#" class="sub-menu-link">
+                      <img src="help.png">
+                      <p>Help & Support</p>
+                      <span>></span>
+                   </a>
+
+                   <a href="#" class="sub-menu-link">
+                      <img src="logout.png">
+                      <p>Logout</p>
+                      <span>></span>
+                   </a>
+
+                   
+                </div>
+          </div>
+            </div>
+          </div>
+          
+      </nav>
+      <script src="navbar.js"></script>
+
+  </section> 
+
+
     <div class="container">
       <span class="big-circle"></span>
       <img src="shape.png" class="square" alt="" />
