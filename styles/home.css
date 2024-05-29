@@ -732,5 +732,178 @@ section .card .about{
 
 
 
+/* Media Queries */
+@media (max-width: 1200px) {
+    .swiper {
+        width: 80%;
+    }
+}
+
+@media (max-width: 992px) {
+    .swiper {
+        width: 70%;
+    }
+    .swiper-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .swiper-slide {
+        flex: 0 0 calc(33.333% - 40px); /* 3 cards per row with margins */
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .swiper {
+        width: 100%;
+    }
+    .swiper-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .swiper-slide {
+        flex: 0 0 calc(100% - 40px); /* 1 card per row with margins */
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 24px;
+    }
+    .card {
+        height: auto;
+        margin: 10px 0;
+        width: 100%;
+    }
+    .card .card-content {
+        padding: 20px;
+    }
+    .card .name-profession .name {
+        font-size: 18px;
+    }
+    .card .name-profession .profession {
+        font-size: 14px;
+    }
+    .card .rating i {
+        font-size: 16px;
+    }
+    .card .button button {
+        font-size: 12px;
+        padding: 6px 18px;
+    }
+}
+.contact-in {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.contact-form {
+    height: 100vh;
+    padding: 110px;
+}
+
+.contact-form h1 {
+    margin-top: 25px;
+    font-size: 30px;
+    color: #1877F2;
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.contact-form p {
+    margin-bottom: 10px;
+    border-radius: 5%;
+
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #5cb85c;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form-btn:hover {
+    background: #4cae4c;
+}
+
+.info-box {
+    border: 1px solid #359aff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #afc8ff;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-in {
+        margin: 20px;
+    }
+
+    .contact-map iframe {
+        height: 200px;
+    }
+
+    .contact-form h1 {
+        font-size: 20px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form-btn {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-in {
+        margin: 10px;
+    }
+
+    .contact-map iframe {
+        height: 150px;
+    }
+
+    .contact-form h1 {
+        font-size: 18px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 12px;
+    }
+
+    .contact-form-btn {
+        font-size: 14px;
+    }
+}
+
+
+
   
 
