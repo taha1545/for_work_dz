@@ -1,9 +1,10 @@
 <?php
-
+  ob_start();
   include("database.php");
- session_start();
-////////////////////////////////////////
+  session_start();
+//
  $email=$_SESSION["email"];
+ //
  try{
   $sql = " SELECT id_profil FROM `users` WHERE email='$email' ";
   $res=mysqli_query($conn,$sql);
@@ -13,8 +14,7 @@
 }catch(mysqli_sql_exception $e){
   echo "There is a problem22: " . $e->getMessage();
 }
-
-///////////////////////////////////////////////
+//
 if(isset($row["id_profil"] )){
   $idprofile= $row["id_profil"];
   try{
@@ -33,14 +33,10 @@ if(isset($row["id_profil"] )){
     echo "There is a problem22: " . $e->getMessage();
 }
 }
-//////////////////////////////////////////////
-
-
-
+//
  mysqli_close($conn);
+ ob_end_flush();
 ?>
-
-
 <!DOCTYPE html>
   <html>
   <head>
@@ -51,20 +47,15 @@ if(isset($row["id_profil"] )){
       <link rel="stylesheet" href="styles\editprofile.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-
-
-  <body>      
+  <body>   
     <div class="container">
 
-    
-
       <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  enctype="multipart/form-data">
-
       <div class="upload">
         <img src="photos\editeprofile.jpg" id="profile-pic">
         <div class="round">
             <!--//////////////////-->
-          <input type="file" accept="image/jpeg , image/jpg , image/png" id="input-file" name="image">
+          <input type="file"  id="input-file" name="image">
           <i class = "fa fa-camera"></i>
         </div>
         <script>
@@ -74,7 +65,6 @@ if(isset($row["id_profil"] )){
                 profilePic.src = URL.createObjectURL(inputFile.files[0]);
             }
         </script>
-
       </div>
         <div class="main-user-info">  
           <div class="user-input-box">
@@ -230,10 +220,8 @@ if(isset($row["id_profil"] )){
             <label for="Homme">male</label>
             <input type="radio" name="female" id="female">
             <label for="Femme">female</label>
-            
           </div>
         </div>
-        
         <div class="form-submit-btn">
          <p style="display:none" id="mistake" >................................................ please fill all information !!</p>
           <input type="submit" value="Register" name="login">
@@ -243,13 +231,11 @@ if(isset($row["id_profil"] )){
   </body>
 </html>
 <?php
+    ob_start();
     include("database.php");
-    
-
+    //
      if(isset($_POST["login"]) && isset($_POST["name"]) && isset($_POST["familyname"]) && isset($_POST["Domaine"]) && isset($_POST["phone"]) && isset($_POST["date"])  && isset($_POST["skills"]) &&isset($_POST["Experience"])  &&( isset($_POST["male"]) || isset($_POST["female"])) && isset($_FILES["image"])){
-   
-
-      
+    //
      $name=$_POST["name"];
      $familyname=$_POST["familyname"];
      $domaine=$_POST["Domaine"];
@@ -263,10 +249,6 @@ if(isset($row["id_profil"] )){
       }else{
         $gender= "female";
       }
-
-
-
- 
     //image profile
       if($_FILES["image"]["error"] == 4){
         echo
@@ -304,13 +286,6 @@ if(isset($row["id_profil"] )){
           move_uploaded_file($tmpName, 'photos/' . $newImageName);
         }}
       //
-
-
-
-
-
-
-
       // diplome image or cv
       if($_FILES["diplome"]["error"] == 4){
         echo
@@ -333,9 +308,8 @@ if(isset($row["id_profil"] )){
           </script>
           ";
         }
-        else if($fileSize2 > 1000000){
-          echo
-          "
+        else if($fileSize2 > 2000000){
+          echo"
           <script>
             alert('Image Size Is Too Large');
           </script>
@@ -344,14 +318,11 @@ if(isset($row["id_profil"] )){
         else{
           $newImageName2 = uniqid();
           $newImageName2 .= '.' . $imageExtension2;
-    
           move_uploaded_file($tmpName2, 'photos/' . $newImageName2);
         }}
       //
        $session= uniqid();
      ///////
-
-
        $email = $_SESSION['email'];
        try{
         $sql = " SELECT id_profil FROM `users` WHERE email='$email' ";
@@ -363,9 +334,7 @@ if(isset($row["id_profil"] )){
     }catch(mysqli_sql_exception $e){
         echo "There is a problem22: " . $e->getMessage();
     }
-
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
       //insert into profile table
        if(empty($idprofil)) {
        if(!empty($newImageName2)&&  !empty($newImageName)){
@@ -373,13 +342,10 @@ if(isset($row["id_profil"] )){
         $sql = "INSERT INTO profile (name,familyname,domain,phone,date,wilaya,skills,experience,image_name,diplome_name,gender,session) 
         VALUES('$name','$familyname','$domaine','$phone',' $date',' $wilaya',' $skills','$Experience','$newImageName','$newImageName2','$gender','$session')";
          mysqli_query($conn,$sql);
-        
         }catch(mysqli_sql_exception){
         echo"there is problem";
         }
-       
       }
-
        $id=0;
       // get id from profile table
       try{
@@ -425,13 +391,11 @@ if(isset($row["id_profil"] )){
      <script>
      window.location.href = 'home.php';
        </script>";
-
-    
-   
     }else if(isset($_POST["login"]) && (isset($_POST["name"]) || isset($_POST["familyname"])|| isset($_POST["Domaine"]) || isset($_POST["phone"]) || isset($_POST["date"])  || isset($_POST["skills"]) || isset($_POST["Experience"]) || ( isset($_POST["male"]) || isset($_POST["female"])) && isset($_FILES["image"]) )){
       echo" <script> document.querySelector('#mistake').style.display = 'block'; </script>";
     }
  
-  
+  //
  mysqli_close($conn);
-
+ ob_end_flush();
+ ?>
