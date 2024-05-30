@@ -173,15 +173,15 @@
             <h3 class="name">User Name</h3>
             <p class="post">Front end developer</p>
           </div>
-          <nav class="navbar">
+          <div class="navbar">
              <ul>
-                <li><a href="home.php">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#Portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
              </ul>
-          </nav>
+            </div>
        </header>
     <!--header section ends-->
      <div id="menu" class="fas fa-bars"></div>
