@@ -178,5 +178,25 @@
            </form>
         </div>
     </div>
+
+    <script>
+        function saveData() {
+            const nom = document.getElementById('nom').value;
+            const adresse = document.getElementById('adresse').value;
+            const email = document.getElementById('email').value;
+            const telephone = document.getElementById('telephone').value;
+            const specialite = document.getElementById('specialite').value;
+            const annonce = document.getElementById('annonce').value;
+
+            localStorage.setItem('nom', nom);
+            localStorage.setItem('adresse', adresse);
+            localStorage.setItem('email', email);
+            localStorage.setItem('telephone', telephone);
+            localStorage.setItem('specialite', specialite);
+            localStorage.setItem('annonce', annonce);
+
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
